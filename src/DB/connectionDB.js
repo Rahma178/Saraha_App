@@ -1,8 +1,8 @@
-import { DB_URI } from "../../config/config.service.js";
+import {  DB_URI_ONLINE } from "../../config/config.service.js";
 import mongoose from "mongoose";
 
 export default async function connectionDB() {
-    await mongoose.connect(DB_URI)
+    await mongoose.connect(DB_URI_ONLINE)
 
     .then(()=>{
         console.log('DB connected successfully');

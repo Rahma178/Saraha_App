@@ -20,3 +20,4 @@ export const ENCRYPTION_KEYW = process.env.ENCRYPTION_KEYW
 export const EMAIL = process.env.EMAIL
 export const PASSWORD = process.env.PASSWORD
 export const AUDIANCE_GMAIL = process.env.AUDIANCE_GMAIL
+export const DB_URI_ONLINE = process.env.DB_URI_ONLINE
