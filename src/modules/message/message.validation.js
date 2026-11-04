@@ -10,3 +10,6 @@ export const createMessageSchema = {
     
     files: joi.array().items(generalRules.file)
 }
+
+
+

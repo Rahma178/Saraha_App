@@ -9,7 +9,9 @@ import { authentication } from "../../common/middleware/authentication.js";
 
 const messageRouter = Router({strict:true , caseSensitive:true})
 
+
 messageRouter.post("/",
+    authentication,
     multerLocal({
         customPath: "messages",
         customTypes: Multer_Enum.images
@@ -20,8 +22,11 @@ messageRouter.post("/",
 messageRouter.get("/getMessages" ,authentication, MS.getMessages )    
 messageRouter.get("/getMessages/:id",authentication , MS.getMessageById )   
 messageRouter.get("/deleteMessage/:id",authentication , MS.deleteMessage )   
-
-
+messageRouter.post("/requestIdentity/:messageId", authentication, MS.requestSenderIdentity);
+messageRouter.get("/requests", authentication, MS.getRequests);
+messageRouter.patch("/respondRequest/:requestId", authentication, MS.respondToRequest);
+messageRouter.post("/chat/:conversationId", authentication, MS.sendChatMessage);
+messageRouter.get("/chat/:conversationId", authentication, MS.getConversationMessages);
 
 
 export default messageRouter
